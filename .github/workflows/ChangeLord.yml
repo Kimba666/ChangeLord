@@ -28,7 +28,7 @@ jobs:
       - name: Auto Action
         uses: terradatum/auto-action@master
         with:
-          command: 'changelog'
+          command: 'shipit'
           owner: 'Kimba666'
           plugins: 'jira'
           dry-run: 'false'
