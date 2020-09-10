@@ -1,0 +1,13 @@
+{
+  "repository": "Kimba666/ChangeLord",
+  "author": "Kimba666 <jwolflive@gmail.com>",
+  "auto": {
+    "plugins": [
+      "npm",
+      [
+        "jira",
+        "https://teamglobalrisk.atlassian.net/browse"
+      ]
+    ]
+  }
+}
