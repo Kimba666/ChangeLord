@@ -9,5 +9,9 @@
         "https://teamglobalrisk.atlassian.net/browse"
       ]
     ]
+  },
+  "devDependencies": {
+    "@auto-it/jira": "^9.53.1",
+    "auto": "^9.53.1"
   }
 }
