@@ -13,8 +13,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - run: git fetch --tags
+
+      # Install Jira Plugin
+      - id: jira_install
+        run: |
+          yarn add -D @auto-it/jira
+
+      # Clear Working Branch
+      - id: add_all
+        run: |
+          git add .
           
-              # Execute Action
+      # Execute Action
       - name: Auto Action
         uses: terradatum/auto-action@master
         with:
