@@ -1,0 +1,36 @@
+name: ActionLog
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - 'package.json'
+      - 'CHANGELOG.md'
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - run: git fetch --tags
+        
+              # Install Jira Plugin
+      - id: jira_install
+        run: |
+          yarn add -D @auto-it/jira
+          
+              # Execute Action
+      - name: Auto Action
+        uses: terradatum/auto-action@master
+        with:
+          command: 'shipit'
+          owner: 'Kimba666'
+          plugins: 'jira'
+          dry-run: 'false'
+          base-branch: 'master'
+          only-publish-with-release-label: 'false'
+          name: 'Kimba'
+          email: 'jwolflive@gmail.com'
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
