@@ -28,7 +28,8 @@ jobs:
       - name: Auto Action
         uses: terradatum/auto-action@master
         with:
-          command: 'changelog'
+          command1: 'changelog'
+          command2: 'version'
           owner: 'Kimba666'
           plugins: 'jira'
           dry-run: 'false'
@@ -39,19 +40,3 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      # Execute Version Bump
-      - name: Auto Action
-          uses: terradatum/auto-action@master
-          with:
-            command: 'version'
-            owner: 'Kimba666'
-            plugins: 'jira'
-            dry-run: 'false'
-            base-branch: 'master'
-            only-publish-with-release-label: 'false'
-            name: 'Kimba'
-            email: 'jwolflive@gmail.com'
-          env:
-            GH_TOKEN: ${{ secrets.GH_TOKEN }}
-            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
