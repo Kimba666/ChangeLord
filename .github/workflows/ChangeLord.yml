@@ -28,13 +28,12 @@ jobs:
       - name: Auto Action
         uses: terradatum/auto-action@master
         with:
-          command1: 'changelog'
-          command2: 'version'
+          command: 'changelog'
           owner: 'Kimba666'
           plugins: 'jira'
           dry-run: 'false'
           base-branch: 'master'
-          only-publish-with-release-label: 'false'
+          only-publish-with-release-label: 'true'
           name: 'Kimba'
           email: 'jwolflive@gmail.com'
         env:
